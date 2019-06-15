@@ -24,6 +24,8 @@ public class AccountController {
 	public void increaseAmount(@RequestParam("acctId") String acctId, @RequestParam("amount") double amount) {
 		this.jdbcTemplate.update("update tb_account_one set amount = amount + ? where acct_id = ?", amount, acctId);
 		System.out.printf("exec increase: acct= %s, amount= %7.2f%n", acctId, amount);
+		//throw new NullPointerException("测试失败");
+
 	}
 
 	@ResponseBody

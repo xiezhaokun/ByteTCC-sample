@@ -28,6 +28,7 @@ public class TransferController implements ITransferService {
 	public void transfer(@RequestParam String sourceAcctId, @RequestParam String targetAcctId, @RequestParam double amount) {
 		this.acctService.decreaseAmount(sourceAcctId, amount);
 		this.increaseAmount(targetAcctId, amount);
+		throw new NullPointerException("测试");
 	}
 
 	private void increaseAmount(String acctId, double amount) {

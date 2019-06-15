@@ -10,17 +10,17 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
 
 /**
- * 按请求粒度负载均衡(使用MongoDB存储事务日志):需引入SpringCloudConfiguration; <br />
- * 按事务粒度负载均衡(使用文件系统存储事务日志):需引入SpringCloudSecondaryConfiguration;
+ * 锟斤拷锟斤拷锟斤拷锟斤拷锟饺革拷锟截撅拷锟斤拷(使锟斤拷MongoDB锟芥储锟斤拷锟斤拷锟斤拷志):锟斤拷锟斤拷锟斤拷SpringCloudConfiguration; <br />
+ * 锟斤拷锟斤拷锟斤拷锟斤拷锟饺革拷锟截撅拷锟斤拷(使锟斤拷锟侥硷拷系统锟芥储锟斤拷锟斤拷锟斤拷志):锟斤拷锟斤拷锟斤拷SpringCloudSecondaryConfiguration;
  */
 @Import(SpringCloudSecondaryConfiguration.class)
 @EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = "com.bytesvc.provider")
-@EnableAutoConfiguration(exclude = { MongoAutoConfiguration.class }) // 使用文件存储时, 不需要配置mongodb
+@EnableAutoConfiguration(exclude = { MongoAutoConfiguration.class }) // 使锟斤拷锟侥硷拷锟芥储时, 锟斤拷锟斤拷要锟斤拷锟斤拷mongodb
 public class SampleProviderMain {
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(SampleProviderMain.class).bannerMode(Banner.Mode.OFF).run(args);
+		new SpringApplicationBuilder(SampleProviderMain.class).run(args);
 		System.out.println("springcloud-sample-provider started!");
 	}
 
